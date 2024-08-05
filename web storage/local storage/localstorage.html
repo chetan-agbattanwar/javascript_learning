@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Staorage in javascript</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // javascript object`
+    const person = {
+        name: 'John Doe',
+        age: 30,
+        occupation: 'Software Developer',
+        address: {
+            street: '123 Main St',
+            city: 'Anytown',
+            state: 'CA',
+            zip: '12345'
+        },
+        hobbies: ['reading', 'gaming', 'hiking'],
+        greet: function () {
+            console.log(`Hello, my name is ${this.name}.`);
+        }
+    }
+
+    // local storage
+
+    // stored data in local storage
+    // localStorage.setItem('person',person) //n	[object Object]
+    localStorage.setItem('person',JSON.stringify(person)) //{"name":"John Doe","age":30,"occupation":"Software Developer","address":{"street":"123 Main St","city":"Anytown","state":"CA","zip":"12345"},"hobbies":["reading","gaming","hiking"]}
+    
+    // get data from local storage
+    // const getData = localStorage.getItem('person')
+    // console.log(getData); //{"name":"John Doe","age":30,"occupation":"Software Developer","address":{"street":"123 Main St","city":"Anytown","state":"CA","zip":"12345"},"hobbies":["reading","gaming","hiking"]}
+    // console.log(typeof getData); //string
+    
+    const getData = JSON.parse(localStorage.getItem('person'))
+    console.log(getData); //{name: 'John Doe', age: 30, occupation: 'Software Developer', address: {…}, hobbies: Array(3)}
+    console.log(typeof getData);//object
+
+    // delete specific data from local storage
+    // localStorage.removeItem('person')
+
+    // delete all from local storage
+    localStorage.clear()
+
+    
+    
+</script>
+
+</html>
