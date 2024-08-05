@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Page</title>
+</head>
+<body>
+    <h1>What is Event?</h1>
+    <h1>What is Event Object?</h1>
+
+    <h3>type of events :-</h3>
+    <ol>
+        <li>keyboard events</li>
+        <li>mouse events</li>
+        <li>input events</li>
+    </ol>
+
+    <h3>3 ways of writing events in js :-</h3>
+    <ol>
+        <li>Inline Event</li>
+        <li>Dom Event Handler</li>
+        <li>addEventListener Event Handler</li>
+    </ol>
+
+    <h1>Inline Event</h1>
+    <button onclick='alert("onclick")'>onclick</button>
+    <button ondblclick="alert('ondblclick')">ondblclick</button>
+    <button onmouseover="alert('onmouseover')">onmouseover</button>
+    <br>
+
+    <h1>Dom Event Handler</h1>
+    <button id="btn1">onclick</button>
+    <button id="btn2">ondblclick</button>
+    <button id="btn3">onmouseover</button>
+    <br>
+
+    <h1>addEventListener Event Handler</h1>
+    <button id="btn10">click</button>
+    <button id="btn20">dblclick</button>
+    <button id="btn30">mouseover</button>
+    
+</body>
+<script>
+    // Dom Event Handler
+    const btn1 = document.getElementById('btn1')
+    btn1.onclick= ()=> alert('onclick')
+    // console.log(btn1);
+    
+    // document.getElementById('btn1').onclick = function(){
+    //     alert('ondblclick')
+    // }
+
+    document.getElementById('btn2').ondblclick = ()=>alert('dblclick')
+    document.getElementById('btn3').onmouseover = function(){
+        alert('onmouseover')
+    }
+
+
+    // addEventListener
+    const btn10 = document.getElementById('btn10')
+    btn10.addEventListener('click', function() {
+        alert('click')
+    })
+
+    document.getElementById('btn20').addEventListener('dblclick', function() {
+        alert('dblclick')
+    })
+
+    document.getElementById('btn30').addEventListener('mouseover',()=>{
+        alert('mouseover')
+    })        
+</script>
+</html>
